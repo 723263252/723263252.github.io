@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裕坤素质拓展</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/we.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="">
+        </div>
+        <!-- <span style="height: 100px; line-height:100px; font-size:50px; font-weight:500;margin-left: 20px; color: red; font-family: LiSu;">裕坤素质拓展中心</span> -->
+        <img src="./img/name1.jpg" alt="" style="margin:5px 20px; ">
+        <nav class="nav_1">
+            <ul>
+                <li><a href="./index.html">网站首页</a></li>
+                <li><a href="#">关于裕坤</a></li>
+                <li><a href="./project.html">拓展项目</a></li>
+                <li><a href="./base-gz.html">拓展基地</a></li>
+                <li><a href="./contact.html">联系我们</a></li>
+            </ul>
+        </nav>     
+    </header>
+    <div class="slideBox">
+            <ul>
+                <li><img src="./img/ndh.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="./img/Lslide2.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="./img/Lslide4.jpg" alt="" width="1100" height="300"/></li>
+            </ul>
+            <div class="spanBox">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            </div>
+    </div>
+    <div class="content w1100">
+        <span class="top1">您的当前位置：首页 > 卓越团队</span>
+        <div class="left_1">
+            <ul>
+                <li><a href="./we.html"><span>公司介绍</span></a></li>
+                <li><a href="./we2.html"><span>服务承诺</span></a></li>
+                <li><a href="./we3.html"><span>组织收益</span></a></li>
+                <li><a href="#"><span>卓越团队</span></a></li>
+            </ul>
+        </div>
+        <div class="right_2">
+            <p class="p1">卓越团队</p>
+            <hr>
+            <p class="p2">
+                <p>“高瞻远瞩，海纳百川”对于培训行业来说，人才是核心竞争力的基本元素，突破在近二十年的发展过程中，不仅注重对人才的使用，更注册对人才的选拔和培养，而也正是严格的人才选拔机制和完善、标准的培训体系及培训流程，保证培训的专业品质。</p>
+                <p>专业的研发创新队伍</p>
+                <p>为了使中国的体验式培训产品能紧跟国际经济的发展和市场需求的变化，突破在近二十年对体验式培训探索、研究和实践的基础上成立了中国体验式培训领域的专业研发机构，致力于“体验式培训产品”和“体验式培训师”培训体系的构建与开发，并根据客户的反馈及时对创新培训产品给予及时的调整和完善。</p>
+                <p>专业的项目经理队伍</p>
+                <p>闯越拥有一支专业而团结的项目经理队伍，他们均有着极其丰富的相关行业背景，对于相关行业的特点有着深刻的了解，同事他们还在时刻关注着行业的最新发展动态和趋势，并借助整个团队的力量，对行业的培训需求进行深入、细致的分析。因此，他们能够针对客户所处的不同行业特点和需求，帮助客户制定更为切实和有效的培训方案，为客户量身打造最为合适的课程，从而保证培训效果的最大化。</p>
+                <p>专业的培训师队伍
+                </p>
+                <p>在行业内，闯越培训师是标准和优秀的代名词。近十年来，闯越独创了培训师培训和认证体系，保证了培训师队伍长期稳定的发展壮大。同时，闯越每年会面对社会公开招聘专、兼职培训师，而在数以万计的简历中，只有5‰的人能提到面试机会，他们必须拥有丰富的知识和一定的管理工作经验；良好的学习能力和积极乐观的生活态度；出类拔萃的团队合作精神。而每位得到培训师上岗培训资格的人，除了必须通过长达半年艰苦、系统的培训外，还要通过近乎苛刻的考核，方能成为一名优秀的团建培训师。</p>
+            </p>
+            
+        </div>
+    </div>
+    <!-- 轮播代码 -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var slideBox = $(".slideBox");
+             var ul = slideBox.find("ul");
+             var oneWidth = slideBox.find("ul li").eq(0).width();
+             var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+             var timer = null;
+             var sw = 0;                    
+             //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+             number.on("click",function (){
+             $(this).addClass("active").siblings("span").removeClass("active");
+             sw=$(this).index();
+             ul.animate({
+                    "right":oneWidth*sw,    //ul标签的动画为向左移动；
+                       });
+             });
+             //左右按钮的控制效果
+             $(".next").stop(true,true).click(function (){
+                 sw++;
+                 if(sw==number.length){sw=0};
+                 number.eq(sw).trigger("click");
+                 });
+            $(".prev").stop(true,true).click(function (){
+                sw--;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                });
+            //定时器的使用，自动开始
+            timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+            //hover事件完成悬停和，左右图标的动画效果
+            slideBox.hover(function(){
+                $(".next,.prev").animate({
+                    "opacity":1,
+                    },200);
+                clearInterval(timer);
+                },function(){
+                    $(".next,.prev").animate({
+                        "opacity":0.5,
+                        },500);
+                timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+                    })
+            
+        })
+    </script>
+</body>
+</html>
