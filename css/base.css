@@ -1,0 +1,17 @@
+ * { margin:0; padding:0; border:medium none; text-decoration:none;}
+ html { font-size:62.5%;}
+ img, object { max-width:100%;}
+ .pp{ padding-top:140px;}
+ body { font-size:1.4em; font-family:"微软雅黑"; line-height:2em; color:#444}
+ a { color:inherit}
+ a:hover{ color: blue}
+ li { list-style:none}
+ table { border-collapse:collapse}
+ input { outline:medium;}
+ .clearfix { clear: both; }
+ .w1100 {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+ 
