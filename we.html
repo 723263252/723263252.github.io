@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裕坤素质拓展</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/we.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="">
+        </div>
+        <!-- <span style="height: 100px; line-height:100px; font-size:24px; font-weight:500;margin-left: 20px;">裕坤素质拓展中心</span> -->
+        <img src="./img/name1.jpg" alt="" style="margin:5px 20px; ">
+        <nav class="nav_1">
+            <ul>
+                <li><a href="./index.html">网站首页</a></li>
+                <li><a href="#">关于裕坤</a></li>
+                <li><a href="./project.html">拓展项目</a></li>
+                <li><a href="./base-gz.html">拓展基地</a></li>
+                <li><a href="./contact.html">联系我们</a></li>
+            </ul>
+        </nav>     
+    </header>
+    <div class="slideBox">
+            <ul>
+                    <li><img src="./img/ndh.jpg" alt="" width="1100" height="300"/></li>
+                    <li><img src="./img/Lslide2.jpg" alt="" width="1100" height="300"/></li>
+                    <li><img src="./img/Lslide4.jpg" alt="" width="1100" height="300"/></li>
+            </ul>
+            <div class="spanBox">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+
+            </div>
+    </div>
+    <div class="content w1100">
+        <span class="top1">您的当前位置：首页 > 公司介绍</span>
+        <div class="left_1">
+            <ul>
+                <li><a href="#"><span>公司介绍</span></a></li>
+                <li><a href="./we2.html"><span>服务承诺</span></a></li>
+                <li><a href="./we3.html"><span>组织收益</span></a></li>
+                <li><a href="./we4.html"><span>卓越团队</span></a></li>
+            </ul>
+        </div>
+        <div class="right_2">
+            <p class="p1">公司介绍</p>
+            <hr>
+            <p class="p2"></p>
+            裕坤素质拓展中心成立于2017年，目前公司旗下 拥有闯越团建，爱动策划，行公关，黄埔军训四大品牌。
+
+            闯越团建专业从事企业策划创意主题团建活动策划及执行、公司团建、拓展训练（体验式培训）、技能培训、企业内训、和军训特训营等业务。团建业务部在全国拥有多个大型的户外拓展训练基地和室内外训练营地及一批资深培训师队伍，为不同领域的企业在发展战略、领导能力、团队建设、客户服务、经营管理、人力资源和企业文化和高等学校提供优质服务和解决方案，公司在团建产品的开发方面一直处于行业领导地位。闯越团建是打造全国最大规模的企业团建服务供应商,致力于为企业提供品质、创意、年轻人喜欢的团建解决方案。
+
+            闯越团建尤其擅长百人以上的团队，让客户共同经历一次非凡的体验，塑造更优秀的个人，成就最完美的团队。
+
+            爱动策划主要从事大小赛事策划执行、企业家庭日、企业趣味运动会等策划类业务开展。
+
+            行公关主要专注于提供上海活动策划、企业年会策划、发布会策划、品牌策划、会务庆典、数字传媒、展会策划执行等服务，为客户提供活动策划品牌传播一站式服务。 
+
+            闯越主要服务客户包括超过1000家世界著名企业及中国本土优秀品牌企业。闯越目前全国拥有4家分公司， 无论您在广州、深圳、惠州、东莞、中山、佛山、清远等地，只要您有团建及活动策划需求，请联系我们“沟通无间，欢乐无限”
+
+           <p>核心定位：大型活动创意策划专家 </p>
+            <p>我们的愿景：中国活动策划领导品牌 </p>
+            <p>使命：体验非凡，探索未知 </p>
+            <p>价值观：责任、共进、进取、创新</p>
+        </div>
+    </div>
+    <!-- 轮播代码 -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var slideBox = $(".slideBox");
+             var ul = slideBox.find("ul");
+             var oneWidth = slideBox.find("ul li").eq(0).width();
+             var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+             var timer = null;
+             var sw = 0;                    
+             //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+             number.on("click",function (){
+             $(this).addClass("active").siblings("span").removeClass("active");
+             sw=$(this).index();
+             ul.animate({
+                    "right":oneWidth*sw,    //ul标签的动画为向左移动；
+                       });
+             });
+             //左右按钮的控制效果
+             $(".next").stop(true,true).click(function (){
+                 sw++;
+                 if(sw==number.length){sw=0};
+                 number.eq(sw).trigger("click");
+                 });
+            $(".prev").stop(true,true).click(function (){
+                sw--;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                });
+            //定时器的使用，自动开始
+            timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+            //hover事件完成悬停和，左右图标的动画效果
+            slideBox.hover(function(){
+                $(".next,.prev").animate({
+                    "opacity":1,
+                    },200);
+                clearInterval(timer);
+                },function(){
+                    $(".next,.prev").animate({
+                        "opacity":0.5,
+                        },500);
+                timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+                    })
+            
+        })
+    </script>
+</body>
+</html>
