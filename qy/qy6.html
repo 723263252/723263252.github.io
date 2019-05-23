@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裕坤素质拓展</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/we.css">
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.png" alt="">
+        </div>
+        <!-- <span style="height: 100px; line-height:100px; font-size:24px; font-weight:500;margin-left: 20px;">裕坤素质拓展中心</span> -->
+        <img src="../img/name1.jpg" alt="" style="margin:5px 20px; ">
+        <nav class="nav_1">
+            <ul>
+                <li><a href="../index.html">网站首页</a></li>
+                <li><a href="../we.html">关于裕坤</a></li>
+                <li><a href="../project.html">拓展项目</a></li>
+                <li><a href="../base-gz.html">拓展基地</a></li>
+                <li><a href="../contact.html">联系我们</a></li>
+            </ul>
+        </nav>     
+    </header>
+    <div class="slideBox">
+            <ul>
+                <li><img src="../img/ndh.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="../img/Lslide2.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="../img/Lslide4.jpg" alt="" width="1100" height="300"/></li>
+            </ul>
+            <div class="spanBox">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            </div>
+    </div>
+    <div class="content w1100">
+        <span class="top1">您的当前位置：首页 > 拓展基地</span>
+        <div class="left_1">
+            <ul>
+                    <li><a href="#"><img src="../img/ly_img_03.gif" alt="" style="width: 275px; height: 52px;"></span></a></li>
+                    <li><a href="../base-gz.html"><span>广州拓展基地</span></a></li>
+                    <li><a href="../base-sz.html"><span>深圳拓展基地</span></a></li>
+                    <li><a href="../base-hz.html"><span>惠州拓展基地</span></a></li>
+                    <li><a href="../base-dg.html"><span>东莞拓展基地</span></a></li>
+                    <li><a href=".#"><span>中山拓展基地</span></a></li>
+                    <li><a href="../base-fs.html"><span>佛山拓展基地</span></a></li>
+                    <li><a href="../base-qy.html"><span>清远拓展基地</span></a></li>
+            </ul>
+        </div>
+        <div class="right_2">
+            <p style="font-size: 24px; text-align: center;margin: 10px 0">清远拓展基地之凤城生态园训练基地</p>
+            　  鳳城生态园位于广东省清远市清城区凤城沙田石咀村背，座落于景色秀丽的笔架山脚下，自然气息浓厚，信依山旁水，环境清幽，是一个集多项野外活动、体育运动、天然水上拓展为一体的主题公园，极具娱乐性、观赏性、趣味性。
+
+ 
+
+凤城基地的拓展设施有高空项目：跳出自我、高空断桥、高空平衡木、巨人梯等；地面项目：胜利墙、网中情缘、决战沙场、穿越雷区、信任背摔、孤岛求生、无轨电车、罗马炮架、地雷迷阵、怪兽过河……等；水上项目：抢滩登陆/竹筏争流、水中拆弹、水上浮桶、水上木板/轮胎、水上网绳等。
+            <p style="text-align: center;"><img src="../img/qy/qy6a.jpg" alt="" width="500" height="300"></p>
+            <p style="text-align: center;"><img src="../img/qy/qy6b.jpg" alt="" width="500" height="300"></p>
+            <p style="text-align: center;"><img src="../img/qy/qy6c.png" alt="" width="500" height="300"></p>
+            <p style="text-align: center;"><img src="../img/qy/qy6d.png" alt="" width="500" height="300"></p>
+    <!-- 轮播代码 -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var slideBox = $(".slideBox");
+             var ul = slideBox.find("ul");
+             var oneWidth = slideBox.find("ul li").eq(0).width();
+             var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+             var timer = null;
+             var sw = 0;                    
+             //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+             number.on("click",function (){
+             $(this).addClass("active").siblings("span").removeClass("active");
+             sw=$(this).index();
+             ul.animate({
+                    "right":oneWidth*sw,    //ul标签的动画为向左移动；
+                       });
+             });
+             //左右按钮的控制效果
+             $(".next").stop(true,true).click(function (){
+                 sw++;
+                 if(sw==number.length){sw=0};
+                 number.eq(sw).trigger("click");
+                 });
+            $(".prev").stop(true,true).click(function (){
+                sw--;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                });
+            //定时器的使用，自动开始
+            timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+            //hover事件完成悬停和，左右图标的动画效果
+            slideBox.hover(function(){
+                $(".next,.prev").animate({
+                    "opacity":1,
+                    },200);
+                clearInterval(timer);
+                },function(){
+                    $(".next,.prev").animate({
+                        "opacity":0.5,
+                        },500);
+                timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+                    })
+            
+        })
+    </script>
+</body>
+</html>
