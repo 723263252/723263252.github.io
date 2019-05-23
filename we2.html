@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裕坤素质拓展</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/we.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="">
+        </div>
+        <!-- <span style="height: 100px; line-height:100px; font-size:24px; font-weight:500;margin-left: 20px;">裕坤素质拓展中心</span> -->
+        <img src="./img/name1.jpg" alt="" style="margin:5px 20px; ">
+        <nav class="nav_1">
+            <ul>
+                <li><a href="./index.html">网站首页</a></li>
+                <li><a href="#">关于裕坤</a></li>
+                <li><a href="./project.html">拓展项目</a></li>
+                <li><a href="./base-gz.html">拓展基地</a></li>
+                <li><a href="./contact.html">联系我们</a></li>
+            </ul>
+        </nav>     
+    </header>
+    <div class="slideBox">
+            <ul>
+                <li><img src="./img/ndh.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="./img/Lslide2.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="./img/Lslide4.jpg" alt="" width="1100" height="300"/></li>
+            </ul>
+            <div class="spanBox">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            </div>
+    </div>
+    <div class="content w1100">
+        <span class="top1">您的当前位置：首页 > 服务承诺</span>
+        <div class="left_1">
+            <ul>
+                <li><a href="./we.html"><span>公司介绍</span></a></li>
+                <li><a href="#"><span>服务承诺</span></a></li>
+                <li><a href="./we3.html"><span>组织收益</span></a></li>
+                <li><a href="./we4.html"><span>卓越团队</span></a></li>
+            </ul>
+        </div>
+        <div class="right_2">
+            <p class="p1">服务承诺</p>
+            <hr>
+            <p class="p2">
+                公司自2017年成立以来，我们一直坚信：愛，需要多用一份心！始终以“用心做事，铸就品质”为导向，给予客户“多对一”的全方位专业服务，别开生面地开拓出一种凝聚团队“爱的力量”的体验式培训。
+     穿梭在都市的上班族们，工作压力日趋陡增，心灵日渐为现实生活束缚所累，企业也因此陷入前所未有的困境并面临着巨大的挑战。然而时代却在召 唤，越来越多的有志之士愈益认识到，在整体社会这样一个大的团队范畴下，人与人之间放开心灵，坦诚相待是多么的重要！而面对愈演愈烈的市场竞争，激发人的 潜能、再造团队精神力量无疑比传统的被动获取专业知识更有意义，亲身体验的培训永远要比语方与文字更教人铭心与心。
+     企业团建的客户之广，遍布全球500强企业。基于各大企业未来发展的国际前瞻，作为公司最宝贵财富的专职培训师队伍，不仅经验丰富、幽默风 趣，气场十足，更可进行多语种的导向培训，极易与学员达成心灵上的共鸣。而针对培训效果的精益求精，我们还将拓展基地开发至全国各地，并配合各地的分枝机 构统筹规划、相得益彰。 
+      其中拓展培训的“体验式培训”，旨在令团队学员亲身参与到专家精心为企业量身订制出的项目中来，全体学员互爱互持，奋力并肩完成使命。项目模拟课 程却又不乏真情交融，充分感受贯穿在整个项目过程中的成败得失，将个人以及团队中所存在的问题在短时间内集中地表现出来，使得学员在心灵上受到极大的震 撼。以增强自信，磨练意志；启迪智慧，领悟贯通；激发无限创造潜能。从而体验、分享、交流、整合并且积极运用到自身的工作与生活当中来。于企业而言，达成 积极融洽的组织氛围，增强企业的凝聚力，树立相互配合、相互支持的团队精神与整体意识。 
+     公司相继推出了亲子活动、家庭日、趣味运动会、年会等温馨项目，让家属与亲朋好友亦能参与其中，营造出企业便是一个其乐融融、爱满其中的 幸福团圆大家庭氛围，亲密无间中，消除了人与人之间的隔阂，尽显团队协作的凝聚与融洽，也达成了企业培训目标的根本所在。而考虑到体验式培训亲身参与的独 特训练方式，“安全保障”无疑乃重中之重。 在培训过程中，除主带培训师外，我们更是加重了辅 助老师的比例，给予学员点对点甚至多对一的专针导训，监督充盈全程，呵护贯穿始终。
+      世上无难事，只怕有心人。多一份心，便多一份爱，融爱于开拓，博天空海阔！
+            </p>
+            
+        </div>
+    </div>
+    <!-- 轮播代码 -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var slideBox = $(".slideBox");
+             var ul = slideBox.find("ul");
+             var oneWidth = slideBox.find("ul li").eq(0).width();
+             var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+             var timer = null;
+             var sw = 0;                    
+             //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+             number.on("click",function (){
+             $(this).addClass("active").siblings("span").removeClass("active");
+             sw=$(this).index();
+             ul.animate({
+                    "right":oneWidth*sw,    //ul标签的动画为向左移动；
+                       });
+             });
+             //左右按钮的控制效果
+             $(".next").stop(true,true).click(function (){
+                 sw++;
+                 if(sw==number.length){sw=0};
+                 number.eq(sw).trigger("click");
+                 });
+            $(".prev").stop(true,true).click(function (){
+                sw--;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                });
+            //定时器的使用，自动开始
+            timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+            //hover事件完成悬停和，左右图标的动画效果
+            slideBox.hover(function(){
+                $(".next,.prev").animate({
+                    "opacity":1,
+                    },200);
+                clearInterval(timer);
+                },function(){
+                    $(".next,.prev").animate({
+                        "opacity":0.5,
+                        },500);
+                timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+                    })
+            
+        })
+    </script>
+</body>
+</html>
