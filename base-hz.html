@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裕坤素质拓展</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/we.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="">
+        </div>
+        <!-- <span style="height: 100px; line-height:100px; font-size:24px; font-weight:500;margin-left: 20px;">裕坤素质拓展中心</span> -->
+        <img src="./img/name1.jpg" alt="" style="margin:5px 20px; ">
+        <nav class="nav_1">
+            <ul>
+                <li><a href="./index.html">网站首页</a></li>
+                <li><a href="./we.html">关于裕坤</a></li>
+                <li><a href="./project.html">拓展项目</a></li>
+                <li><a href="./base-gz.html">拓展基地</a></li>
+                <li><a href="./contact.html">联系我们</a></li>
+            </ul>
+        </nav>     
+    </header>
+    <div class="slideBox">
+            <ul>
+                    <li><img src="./img/ndh.jpg" alt="" width="1100" height="300"/></li>
+                    <li><img src="./img/Lslide2.jpg" alt="" width="1100" height="300"/></li>
+                    <li><img src="./img/Lslide4.jpg" alt="" width="1100" height="300"/></li>
+            </ul>
+            <div class="spanBox">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+
+            </div>
+    </div>
+    <div class="content w1100">
+        <span class="top1">您的当前位置：首页 > 拓展基地</span>
+        <div class="left_1">
+            <ul>
+                <li><a href="#"><img src="./img/ly_img_03.gif" alt="" style="width: 275px; height: 52px;"></span></a></li>
+                <li><a href="base-gz.html"><span>广州拓展基地</span></a></li>
+                <li><a href="base-sz.html"><span>深圳拓展基地</span></a></li>
+                <li><a href="#"><span>惠州拓展基地</span></a></li>
+                <li><a href="base-dg.html"><span>东莞拓展基地</span></a></li>
+                <li><a href="base-zs.html"><span>中山拓展基地</span></a></li>
+                <li><a href="base-fs.html"><span>佛山拓展基地</span></a></li>
+                <li><a href="base-qy.html"><span>清远拓展基地</span></a></li>
+        </div>
+        <div class="right_2">
+            <p style="font-size: 24px; text-align: center;margin: 10px 0">惠州拓展基地</p>
+            <div class="right_2_1" style="height: 170px; margin-top: 30px;"> 
+                <img src="./img/hz/hz2.jpg" alt="" width="230px" height="170px" style="float: left;">
+                <div class="left_text" style="float: left; width: 540px;"><p>
+                        惠州拓展基地之巽寮湾海公园沙滩拓展训练基地</p><p>巽寮湾海公园沙滩拓展训练基地，位于惠东县南部的巽寮镇，被誉为称做“天赐白沙堤”，海水清澈碧绿，周围布满了千姿百态的奇礁异石，有“蓝色翡翠”和“天赐白金堤”的美誉。</p><a href="./hz/hz1.html" style="float:right;">阅读全文<<</a></div>
+            </div>
+            <div class="right_2_1" style="height: 170px; margin-top: 30px;"> 
+                    <img src="./img/hz/hz1.jpg" alt="" width="230px" height="170px" style="float: left;">
+                    <div class="left_text" style="float: left; width: 540px;"><p>惠州拓展基地尚天然国际花海温泉小镇</p><p>惠州尚天然国际花海温泉小镇位于广东省惠州市龙门县，临近蓝田瑶族风情园、草莓园、柑橘园，让您享受农家的乐趣。广州到景区仅需1小时20分钟车程，深圳到景区仅需1小时30分钟车程，距东莞、佛山、惠州、增城等高消费力城市车程在1.5－2小时范围内，交通便利。</p><a href="./hz/hz2.html" style="float:right;">阅读全文<<</a></div>
+            </div>
+            <div class="right_2_1" style="height: 170px; margin-top: 30px;"> 
+                    <img src="./img/hz/hz3.jpg" alt="" width="230px" height="170px" style="float: left;">
+                    <div class="left_text" style="float: left; width: 540px;"><p>惠州拓展基地之南昆山大观园基地</p><p>惠州南昆山大观园基地，位于广东省惠州市龙门县永汉镇油田村，是一家按国际五星级标准筹建的综合性旅游度假酒店。地处龙门西南部，广州市的东北方向是南昆山温泉大观园的“南大门”，连接珠江三角洲的西南部中心出口，交通方便。距增城38公里，距广州90公里，距东莞70公...</p><a href="./hz/hz3.html" style="float:right;">阅读全文<<</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- 轮播代码 -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var slideBox = $(".slideBox");
+             var ul = slideBox.find("ul");
+             var oneWidth = slideBox.find("ul li").eq(0).width();
+             var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+             var timer = null;
+             var sw = 0;                    
+             //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+             number.on("click",function (){
+             $(this).addClass("active").siblings("span").removeClass("active");
+             sw=$(this).index();
+             ul.animate({
+                    "right":oneWidth*sw,    //ul标签的动画为向左移动；
+                       });
+             });
+             //左右按钮的控制效果
+             $(".next").stop(true,true).click(function (){
+                 sw++;
+                 if(sw==number.length){sw=0};
+                 number.eq(sw).trigger("click");
+                 });
+            $(".prev").stop(true,true).click(function (){
+                sw--;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                });
+            //定时器的使用，自动开始
+            timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+            //hover事件完成悬停和，左右图标的动画效果
+            slideBox.hover(function(){
+                $(".next,.prev").animate({
+                    "opacity":1,
+                    },200);
+                clearInterval(timer);
+                },function(){
+                    $(".next,.prev").animate({
+                        "opacity":0.5,
+                        },500);
+                timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+                    })
+            
+        })
+    </script>
+</body>
+</html>
