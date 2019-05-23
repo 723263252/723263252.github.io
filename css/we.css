@@ -1,0 +1,45 @@
+.content{
+    height: 1350px;
+}
+.top1{
+    float: left;
+    width: 100%;
+    height: 30px;
+}
+.left_1{
+    float: left;
+    width: 25%;
+    height: 1320px;
+}
+.left_1 li{
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+}
+
+.left_1 li>a>span{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #ccc;
+    padding-left: 20px;
+    /* background-color: red; */
+}
+.left_1 li>a>span:hover{
+    background: red;
+}
+
+.right_2{
+    float: left;
+    height: 1320px;
+    width: 70%;
+    margin-left:35px;
+    
+}
+.right_2 .p1{
+    font-size: 18px;
+    height: 35px;
+    line-height: 35px;
+    color: #900;
+    border-bottom: #ccc 1px solid;
+}
