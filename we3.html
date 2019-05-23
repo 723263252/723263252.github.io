@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裕坤素质拓展</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/we.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="">
+        </div>
+        <!-- <span style="height: 100px; line-height:100px; font-size:24px; font-weight:500;margin-left: 20px;">裕坤素质拓展中心</span> -->
+        <img src="./img/name1.jpg" alt="" style="margin:5px 20px; ">
+        <nav class="nav_1">
+            <ul>
+                <li><a href="./index.html">网站首页</a></li>
+                <li><a href="#">关于裕坤</a></li>
+                <li><a href="./project.html">拓展项目</a></li>
+                <li><a href="./base-gz.html">拓展基地</a></li>
+                <li><a href="./contact.html">联系我们</a></li>
+            </ul>
+        </nav>     
+    </header>
+    <div class="slideBox">
+            <ul>
+                <li><img src="./img/ndh.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="./img/Lslide2.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="./img/Lslide4.jpg" alt="" width="1100" height="300"/></li>
+            </ul>
+            <div class="spanBox">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            </div>
+    </div>
+    <div class="content w1100">
+        <span class="top1">您的当前位置：首页 > 组织收益</span>
+        <div class="left_1">
+            <ul>
+                <li><a href="./we.html"><span>公司介绍</span></a></li>
+                <li><a href="./we2.html"><span>服务承诺</span></a></li>
+                <li><a href="#"><span>组织收益</span></a></li>
+                <li><a href="./we4.html"><span>卓越团队</span></a></li>
+            </ul>
+        </div>
+        <div class="right_2">
+            <p class="p1">组织收益</p>
+            <hr>
+            <p class="p2">
+                <p>闯越通过参与各种形式多样、生动有趣的互动式游戏和挑战高难度的户外体验项目，透过分享讨论，把枯燥的团队管理理论在活动之中融会贯通，令每一位参与者亲身经历，感悟平衡生活的魅力。</p>
+                <p>课程收益</p>
+                <p>1、体会团队的作用，增进对集体的积极参与和责任意识。</p>
+                <p>2、通过了解个人的优点与弱点；在今后的工作中保持正面和积极心态。</p>
+                <p>3、鼓励团队成员勇于承担责任，为达到团队的目标贡献自己的力量。</p>
+                <p>4、培养自我授权的团队领导力，果断地采取行动，有主见地做决策，迎接变化的挑战。
+                </p>
+                <p>5、掌握克服团队沟通障碍及管理团队冲突的技巧。</p>
+                <p>6、了解有效团队的特征及团队成员的作用。</p>
+                <p>7、充分认识团队合力将创造1+1>2的绩效表现。提升团队的执行能力。</p>
+            </p>
+            
+        </div>
+    </div>
+    <!-- 轮播代码 -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var slideBox = $(".slideBox");
+             var ul = slideBox.find("ul");
+             var oneWidth = slideBox.find("ul li").eq(0).width();
+             var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+             var timer = null;
+             var sw = 0;                    
+             //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+             number.on("click",function (){
+             $(this).addClass("active").siblings("span").removeClass("active");
+             sw=$(this).index();
+             ul.animate({
+                    "right":oneWidth*sw,    //ul标签的动画为向左移动；
+                       });
+             });
+             //左右按钮的控制效果
+             $(".next").stop(true,true).click(function (){
+                 sw++;
+                 if(sw==number.length){sw=0};
+                 number.eq(sw).trigger("click");
+                 });
+            $(".prev").stop(true,true).click(function (){
+                sw--;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                });
+            //定时器的使用，自动开始
+            timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+            //hover事件完成悬停和，左右图标的动画效果
+            slideBox.hover(function(){
+                $(".next,.prev").animate({
+                    "opacity":1,
+                    },200);
+                clearInterval(timer);
+                },function(){
+                    $(".next,.prev").animate({
+                        "opacity":0.5,
+                        },500);
+                timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+                    })
+            
+        })
+    </script>
+</body>
+</html>
