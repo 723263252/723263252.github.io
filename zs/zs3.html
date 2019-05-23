@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裕坤素质拓展</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/we.css">
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.png" alt="">
+        </div>
+        <!-- <span style="height: 100px; line-height:100px; font-size:24px; font-weight:500;margin-left: 20px;">裕坤素质拓展中心</span> -->
+        <img src="../img/name1.jpg" alt="" style="margin:5px 20px; ">
+        <nav class="nav_1">
+            <ul>
+                <li><a href="../index.html">网站首页</a></li>
+                <li><a href="../we.html">关于裕坤</a></li>
+                <li><a href="../project.html">拓展项目</a></li>
+                <li><a href="../base-gz.html">拓展基地</a></li>
+                <li><a href="../contact.html">联系我们</a></li>
+            </ul>
+        </nav>     
+    </header>
+    <div class="slideBox">
+            <ul>
+                <li><img src="../img/ndh.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="../img/Lslide2.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="../img/Lslide4.jpg" alt="" width="1100" height="300"/></li>
+            </ul>
+            <div class="spanBox">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            </div>
+    </div>
+    <div class="content w1100">
+        <span class="top1">您的当前位置：首页 > 拓展基地</span>
+        <div class="left_1">
+            <ul>
+                    <li><a href="#"><img src="../img/ly_img_03.gif" alt="" style="width: 275px; height: 52px;"></span></a></li>
+                    <li><a href="../base-gz.html"><span>广州拓展基地</span></a></li>
+                    <li><a href="../base-sz.html"><span>深圳拓展基地</span></a></li>
+                    <li><a href="../base-hz.html"><span>惠州拓展基地</span></a></li>
+                    <li><a href="../base-dg.html"><span>东莞拓展基地</span></a></li>
+                    <li><a href="../base-zs.html"><span>中山拓展基地</span></a></li>
+                    <li><a href="../base-fs.html"><span>佛山拓展基地</span></a></li>
+                    <li><a href="../base-qy.html"><span>清远拓展基地</span></a></li>
+            </ul>
+        </div>
+        <div class="right_2">
+            <p style="font-size: 24px; text-align: center;margin: 10px 0">中山逍遥谷拓展基地</p>
+            　   逍遥谷景区内较好的保存了原始森林风貌，植被茂密，山花烂漫，溪水潺潺，沟谷纵横，泉清石奇，林荫蔽日，空气纯净度高，谷内拥有610多种常绿季雨林植物，景区内负离子含量极高，每立方厘米达八万个以上。逍遥谷是中山的避暑胜地，年平均气温16 ℃，同时温度比城区低5~ 6℃。夏日来此，不但气候宜人，还有5000平方米的天然山水泳池供你畅游。目前己建成的配套项目有：度假别墅和客房、大型会议中心、文化广场（演出区）、逍遥谷酒楼等游乐项。
+            逍遥谷有着丰富的人文资源。当年抗日部队珠江纵队司令部遗址“古氏宗祠”就在景区之内，槟榔村的先民是从中原迁徙来此的客家人分支。
+            基地占地100亩，可同时容纳1000人进行活动。场内建有专业的拓展项目设施及多个逼真的户外丛林野战场、令人心情激动的天然攀岩场，并依据天然山水资源设计了溯溪等一系列丰富的特色项目，让您挑战不一样的自己。
+            <p style="text-align: center;"><img src="../img/zs/zs3a.jpg" alt="" width="600" height="400"></p>
+            <p style="text-align: center;"><img src="../img/zs/zs3b.jpg" alt="" width="600" height="400"></p>
+            <p style="text-align: center;"><img src="../img/zs/zs3c.jpg" alt="" width="600" height="400"></p>
+            <p style="text-align: center;"><img src="../img/zs/zs3d.jpg" alt="" width="600" height="400"></p>
+        </div>
+    </div>
+    <!-- 轮60码 -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var slideBox = $(".slideBox");
+             var ul = slideBox.find("ul");
+             var oneWidth = slideBox.find("ul li").eq(0).width();
+             var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+             var timer = null;
+             var sw = 0;                    
+             //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+             number.on("click",function (){
+             $(this).addClass("active").siblings("span").removeClass("active");
+             sw=$(this).index();
+             ul.animate({
+                    "right":oneWidth*sw,    //ul标签的动画为向左移动；
+                       });
+             });
+             //左右按钮的控制效果
+             $(".next").stop(true,true).click(function (){
+                 sw++;
+                 if(sw==number.length){sw=0};
+                 number.eq(sw).trigger("click");
+                 });
+            $(".prev").stop(true,true).click(function (){
+                sw--;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                });
+            //定时器的使用，自动开始
+            timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+            //hover事件完成悬停和，左右图标的动画效果
+            slideBox.hover(function(){
+                $(".next,.prev").animate({
+                    "opacity":1,
+                    },200);
+                clearInterval(timer);
+                },function(){
+                    $(".next,.prev").animate({
+                        "opacity":0.5,
+                        },500);
+                timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+                    })
+            
+        })
+    </script>
+</body>
+</html>
