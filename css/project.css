@@ -1,0 +1,29 @@
+.content{
+    height: 1500px;
+}
+.left_1{
+    height: 1450px;
+}
+.content .right_2 ul>li{
+    width: 100%
+}
+.content .right_2 ul>li>a{
+    display: block;
+    width: 80%;
+    padding: 20px 50px;
+    overflow: hidden;
+}
+.content .right_2 ul>li>a>img{
+    float: left;
+    overflow: hidden;
+    padding-right: 50px;
+}
+.content .right_2 ul>li>a>input{
+    display: block;
+    width: 80px;
+    height: 40px;
+    margin-top: 10px;
+}
+.content .right_2 ul>li>a>input:hover{
+    background-color: red;
+}
