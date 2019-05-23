@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裕坤素质拓展</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/we.css">
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.png" alt="">
+        </div>
+        <!-- <span style="height: 100px; line-height:100px; font-size:24px; font-weight:500;margin-left: 20px;">裕坤素质拓展中心</span> -->
+        <img src="../img/name1.jpg" alt="" style="margin:5px 20px; ">
+        <nav class="nav_1">
+            <ul>
+                <li><a href="../index.html">网站首页</a></li>
+                <li><a href="../we.html">关于裕坤</a></li>
+                <li><a href="../project.html">拓展项目</a></li>
+                <li><a href="../base-gz.html">拓展基地</a></li>
+                <li><a href="../contact.html">联系我们</a></li>
+            </ul>
+        </nav>     
+    </header>
+    <div class="slideBox">
+            <ul>
+                <li><img src="../img/ndh.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="../img/Lslide2.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="../img/Lslide4.jpg" alt="" width="1100" height="300"/></li>
+            </ul>
+            <div class="spanBox">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            </div>
+    </div>
+    <div class="content w1100">
+        <span class="top1">您的当前位置：首页 > 拓展基地</span>
+        <div class="left_1">
+            <ul>
+                    <li><a href="#"><img src="../img/ly_img_03.gif" alt="" style="width: 275px; height: 52px;"></span></a></li>
+                    <li><a href="../base-gz.html"><span>广州拓展基地</span></a></li>
+                    <li><a href="../base-sz.html"><span>深圳拓展基地</span></a></li>
+                    <li><a href="../base-hz.html"><span>惠州拓展基地</span></a></li>
+                    <li><a href="../base-dg.html"><span>东莞拓展基地</span></a></li>
+                    <li><a href=".#"><span>中山拓展基地</span></a></li>
+                    <li><a href="../base-fs.html"><span>佛山拓展基地</span></a></li>
+                    <li><a href="../base-qy.html"><span>清远拓展基地</span></a></li>
+            </ul>
+        </div>
+        <div class="right_2">
+            <p style="font-size: 24px; text-align: center;margin: 10px 0">清远拓展基地之新银盏拓展基地</p>
+            　   海泉湾度假区拓展基地位于珠海西部海滨，是香港中旅集团继成功开发建设深圳华侨城、世界之窗、锦绣中华之后的又一力作。度假区总占地5.1平方公里，首期开发建设面积约1平方公里,投资22亿元人民币。海泉湾度假区以罕有的海洋温泉为核心，由两座五星级海泉湾维景大酒店、刺激动感的神秘岛主题乐园、集美食娱乐演艺于一体的渔人码头、高科技的梦幻剧场、设备一流星级服务的体检中心、为健康加油的运动俱乐部、打造精英团队的拓展训练营、异域风情的加勒比海岸、高档休闲的高尔夫项目、休闲垂钓区以及国家级自驾车营地等产品和项目组成，是中国目前功能最齐全、综合配套最完善的超大型旅游休闲度假区。
+            <br>
+            <p style="text-align: center;"><img src="../img/qy/qy1a.jpg" alt="" width="600" height="300"></p>
+            <p style="text-align: center;"><img src="../img/qy/qy1b.jpg" alt="" width="600" height="300"></p>
+            <p style="text-align: center;"><img src="../img/qy/qy1c.jpg" alt="" width="600" height="300"></p>
+        </div>
+    </div>
+    <!-- 轮播代码 -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var slideBox = $(".slideBox");
+             var ul = slideBox.find("ul");
+             var oneWidth = slideBox.find("ul li").eq(0).width();
+             var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+             var timer = null;
+             var sw = 0;                    
+             //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+             number.on("click",function (){
+             $(this).addClass("active").siblings("span").removeClass("active");
+             sw=$(this).index();
+             ul.animate({
+                    "right":oneWidth*sw,    //ul标签的动画为向左移动；
+                       });
+             });
+             //左右按钮的控制效果
+             $(".next").stop(true,true).click(function (){
+                 sw++;
+                 if(sw==number.length){sw=0};
+                 number.eq(sw).trigger("click");
+                 });
+            $(".prev").stop(true,true).click(function (){
+                sw--;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                });
+            //定时器的使用，自动开始
+            timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+            //hover事件完成悬停和，左右图标的动画效果
+            slideBox.hover(function(){
+                $(".next,.prev").animate({
+                    "opacity":1,
+                    },200);
+                clearInterval(timer);
+                },function(){
+                    $(".next,.prev").animate({
+                        "opacity":0.5,
+                        },500);
+                timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+                    })
+            
+        })
+    </script>
+</body>
+</html>
