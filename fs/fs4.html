@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裕坤素质拓展</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/we.css">
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.png" alt="">
+        </div>
+        <!-- <span style="height: 100px; line-height:100px; font-size:24px; font-weight:500;margin-left: 20px;">裕坤素质拓展中心</span> -->
+        <img src="../img/name1.jpg" alt="" style="margin:5px 20px; ">
+        <nav class="nav_1">
+            <ul>
+                <li><a href="../index.html">网站首页</a></li>
+                <li><a href="../we.html">关于裕坤</a></li>
+                <li><a href="../project.html">拓展项目</a></li>
+                <li><a href="../base-gz.html">拓展基地</a></li>
+                <li><a href="../contact.html">联系我们</a></li>
+            </ul>
+        </nav>     
+    </header>
+    <div class="slideBox">
+            <ul>
+                <li><img src="../img/ndh.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="../img/Lslide2.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="../img/Lslide4.jpg" alt="" width="1100" height="300"/></li>
+            </ul>
+            <div class="spanBox">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            </div>
+    </div>
+    <div class="content w1100">
+        <span class="top1">您的当前位置：首页 > 拓展基地</span>
+        <div class="left_1">
+            <ul>
+                    <li><a href="#"><img src="../img/ly_img_03.gif" alt="" style="width: 275px; height: 52px;"></span></a></li>
+                    <li><a href="../base-gz.html"><span>广州拓展基地</span></a></li>
+                    <li><a href="../base-sz.html"><span>深圳拓展基地</span></a></li>
+                    <li><a href="../base-hz.html"><span>惠州拓展基地</span></a></li>
+                    <li><a href="../base-dg.html"><span>东莞拓展基地</span></a></li>
+                    <li><a href=".#"><span>中山拓展基地</span></a></li>
+                    <li><a href="../base-fs.html"><span>佛山拓展基地</span></a></li>
+                    <li><a href="../base-qy.html"><span>清远拓展基地</span></a></li>
+            </ul>
+        </div>
+        <div class="right_2">
+            <p style="font-size: 24px; text-align: center;margin: 10px 0">佛山拓展基地之梦里水乡训练基地</p>
+            佛山梦里水乡百花园，位于南海里水，处于广州、佛山两市的中间，是广佛的后花园。
+
+项目占地750亩，以花海、水乡民宿为主题，将人、花、生活融为一体的花海主题公园。
+
+园区内种植有过百种花卉，有太阳花、醉蝶花、百合花、郁金香、金鱼草等多种国内外
+
+名花。园内还有华南最大的观赏性玻璃温室，里面种植10种不同颜色太阳花，可供游客
+
+一年四季入园观赏。园区内还种植多种不同季节开花的名贵树木，如：大腹木棉、
+
+黄花风铃、宫粉紫荆等等……除了让人心醉的观花，可以坐上小火车，也可以踩用单人、
+
+双人、三人的自行车绕园一周穿梭花海之间观赏各式美景。游客可以在天鹅湖上体验
+
+小黄鸭、竹排等脚踏娱乐项目，以及儿童种植科普教育基地。
+            <br>
+            <p style="text-align: center;"><img src="../img/fs/fs4a.jpg" alt="" width="710" height="250"></p>
+    </div>
+    <!-- 轮播代码 -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var slideBox = $(".slideBox");
+             var ul = slideBox.find("ul");
+             var oneWidth = slideBox.find("ul li").eq(0).width();
+             var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+             var timer = null;
+             var sw = 0;                    
+             //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+             number.on("click",function (){
+             $(this).addClass("active").siblings("span").removeClass("active");
+             sw=$(this).index();
+             ul.animate({
+                    "right":oneWidth*sw,    //ul标签的动画为向左移动；
+                       });
+             });
+             //左右按钮的控制效果
+             $(".next").stop(true,true).click(function (){
+                 sw++;
+                 if(sw==number.length){sw=0};
+                 number.eq(sw).trigger("click");
+                 });
+            $(".prev").stop(true,true).click(function (){
+                sw--;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                });
+            //定时器的使用，自动开始
+            timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+            //hover事件完成悬停和，左右图标的动画效果
+            slideBox.hover(function(){
+                $(".next,.prev").animate({
+                    "opacity":1,
+                    },200);
+                clearInterval(timer);
+                },function(){
+                    $(".next,.prev").animate({
+                        "opacity":0.5,
+                        },500);
+                timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+                    })
+            
+        })
+    </script>
+</body>
+</html>
