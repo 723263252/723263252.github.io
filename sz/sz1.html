@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裕坤素质拓展</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/we.css">
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.png" alt="">
+        </div>
+        <!-- <span style="height: 100px; line-height:100px; font-size:24px; font-weight:500;margin-left: 20px;">裕坤素质拓展中心</span> -->
+        <img src="../img/name1.jpg" alt="" style="margin:5px 20px; ">
+        <nav class="nav_1">
+            <ul>
+                <li><a href="../index.html">网站首页</a></li>
+                <li><a href="../we.html">关于裕坤</a></li>
+                <li><a href="../project.html">拓展项目</a></li>
+                <li><a href="../base-gz.html">拓展基地</a></li>
+                <li><a href="../contact.html">联系我们</a></li>
+            </ul>
+        </nav>     
+    </header>
+    <div class="slideBox">
+            <ul>
+                <li><img src="../img/ndh.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="../img/Lslide2.jpg" alt="" width="1100" height="300"/></li>
+                <li><img src="../img/Lslide4.jpg" alt="" width="1100" height="300"/></li>
+            </ul>
+            <div class="spanBox">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            </div>
+    </div>
+    <div class="content w1100">
+        <span class="top1">您的当前位置：首页 > 拓展基地</span>
+        <div class="left_1">
+            <ul>
+                    <li><a href="#"><img src="../img/ly_img_03.gif" alt="" style="width: 275px; height: 52px;"></span></a></li>
+                    <li><a href="../base-gz.html"><span>广州拓展基地</span></a></li>
+                    <li><a href="../base-sz.html"><span>深圳拓展基地</span></a></li>
+                    <li><a href="../base-hz.html"><span>惠州拓展基地</span></a></li>
+                    <li><a href="../base-dg.html"><span>东莞拓展基地</span></a></li>
+                    <li><a href=".#"><span>中山拓展基地</span></a></li>
+                    <li><a href="../base-fs.html"><span>佛山拓展基地</span></a></li>
+                    <li><a href="../base-qy.html"><span>清远拓展基地</span></a></li>
+            </ul>
+        </div>
+        <div class="right_2">
+            <p style="font-size: 24px; text-align: center;margin: 10px 0">深圳拓展基地之科普特生态农业园</p>
+            　   目前，户外拓展培训是一项非常热门的户外拓展培训活动。那么，我们的基地也是在不断更新
+
+    中，最近，我们今天就来聊聊深圳的一风景优美的基地：科普特生态农业园。
+    科普特生态农业园位于深圳市东部美丽的大鹏半岛，依山傍海，东临东山寺和深圳市唯一的全
+
+    国重点文物单位、享深圳“八景之首”美誉的大鹏所城，与大亚湾畔较场尾风情民宿小镇、大鹏古城
+   
+    仅一路之隔。由深圳市科普特绿色产业发展有限公司精心策划和建造。
+    园区占地共1520亩，大部分为天然林地，其余为园地和公共绿地。园区充分利用现有资源，结合
+
+    高新农业、苗木种植、园林景观、生态科技，以乡村俱乐部的形式倾力打造一个集于一体的新概念乡
+    
+    村休闲度假体验园区。
+
+            <br>
+            <p style="text-align: center;"><img src="../img/sz/sz1a.png" alt="" width="550" height="360"></p>
+            <p style="text-align: center;"><img src="../img/sz/sz1b.png" alt="" width="710" height="470"></p>
+            <p style="text-align: center;"><img src="../img/sz/sz1c.png" alt="" width="800" height="500"></p>
+        </div>
+    </div>
+    <!-- 轮播代码 -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var slideBox = $(".slideBox");
+             var ul = slideBox.find("ul");
+             var oneWidth = slideBox.find("ul li").eq(0).width();
+             var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+             var timer = null;
+             var sw = 0;                    
+             //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+             number.on("click",function (){
+             $(this).addClass("active").siblings("span").removeClass("active");
+             sw=$(this).index();
+             ul.animate({
+                    "right":oneWidth*sw,    //ul标签的动画为向左移动；
+                       });
+             });
+             //左右按钮的控制效果
+             $(".next").stop(true,true).click(function (){
+                 sw++;
+                 if(sw==number.length){sw=0};
+                 number.eq(sw).trigger("click");
+                 });
+            $(".prev").stop(true,true).click(function (){
+                sw--;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                });
+            //定时器的使用，自动开始
+            timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+            //hover事件完成悬停和，左右图标的动画效果
+            slideBox.hover(function(){
+                $(".next,.prev").animate({
+                    "opacity":1,
+                    },200);
+                clearInterval(timer);
+                },function(){
+                    $(".next,.prev").animate({
+                        "opacity":0.5,
+                        },500);
+                timer = setInterval(function (){
+                sw++;
+                if(sw==number.length){sw=0};
+                number.eq(sw).trigger("click");
+                },2000);
+                    })
+            
+        })
+    </script>
+</body>
+</html>
