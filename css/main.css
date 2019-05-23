@@ -1,0 +1,94 @@
+header{
+    width: 1100px;
+    margin: 0 auto;
+    padding: 2px 0;
+    overflow: hidden;
+}
+header .logo{
+    float: left;
+}
+header .logo img{
+    width: 100px;
+    height: 100px;
+    box-shadow: 5px 5px 5px #888888;
+}
+header .nav_1{
+    float: right;
+}
+header .nav_1 ul{
+    display: block;
+    margin-top: 25px;
+    height: 40px;
+}
+header .nav_1 ul li{
+    float: left;
+    margin-left:50px; 
+    background-color: red;
+    line-height: 40px;
+    color: aliceblue;
+    border:2px solid;
+    border-radius:15px;
+    width: 70px;
+    text-align: center;
+    box-shadow: 3px 3px 3px #888888;
+}
+header .nav_1 ul li:hover{
+    color: #fff;
+    background-color: blue;
+}
+header .nav_1 ul li a{
+    color: #fff;
+}
+
+
+/* banner轮播图 */
+.slideBox {
+    margin:0 auto;
+    width:1100px;
+    height:300px;
+    box-shadow:2px 2px 10px #C38DD4;
+    position:relative;
+    overflow:hidden;
+}
+.slideBox ul {
+    position:relative;
+    width:2000000px;}
+.slideBox ul li {
+    float:left;
+    width:1100px;
+    height:300px;
+    position:relative;
+    
+}
+.spanBox {
+    position:absolute;
+    width:300px;
+    height:20px;
+    bottom:10px;
+    left:525px;
+}
+.spanBox span {
+    width:18px;
+    height:18px;
+    margin-left:5px;
+    background-color:rgba(201,178,207,1.00);
+    float:left;
+    line-height:16px;
+    text-align:center;
+    text-shadow:2px 2px 2px #C5EBF0;
+    font-family:cabin-sketch;
+    font-size:15px;
+}
+.slideBox .spanBox .active {
+    background-color:rgba(155,83,244,0.79);
+    border:solid 1px #BEEBEC;
+    border-radius:4px;
+}
+
+/* 主要内容区域 */
+.about_yukun{
+    margin:20px auto;
+    width:1100px;
+    height: 380px;
+    position: relative;
+}
